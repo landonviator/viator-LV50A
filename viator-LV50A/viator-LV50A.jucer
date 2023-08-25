@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="zbd1Lc" name="viator-LV50A" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="Viator DSP"
+              pluginName="LV-50A">
+  <MAINGROUP id="BKH40q" name="viator-LV50A">
+    <GROUP id="{264CB48A-D3FB-1AB7-403B-A160F2571928}" name="Source">
+      <GROUP id="{C4D06E66-0748-EC2E-5BBD-24B2E39E07BB}" name="components">
+        <FILE id="V38Xws" name="Header.cpp" compile="1" resource="0" file="Source/components/Header.cpp"/>
+        <FILE id="SgA9sP" name="Header.h" compile="0" resource="0" file="Source/components/Header.h"/>
+      </GROUP>
+      <GROUP id="{8D797427-4BD8-154E-75F8-6818D0494555}" name="Assets">
+        <GROUP id="{056BF0AF-1AEC-503A-B31B-4603C7BED458}" name="decor">
+          <FILE id="eF2a1O" name="decor_grid.png" compile="0" resource="1" file="Source/Assets/decor/decor_grid.png"/>
+          <FILE id="sCWjuV" name="screw.png" compile="0" resource="1" file="Source/Assets/decor/screw.png"/>
+        </GROUP>
+        <GROUP id="{0EAA27CB-6B3E-E8D6-6265-352A149419D4}" name="faders">
+          <FILE id="qCPqb2" name="Ver_flat_slider.png" compile="0" resource="1"
+                file="Source/Assets/faders/Ver_flat_slider.png"/>
+          <FILE id="d8PWbu" name="Ver_slider.png" compile="0" resource="1" file="Source/Assets/faders/Ver_slider.png"/>
+        </GROUP>
+        <GROUP id="{EA1D41D8-091F-94B0-4606-5C591C3E7250}" name="knobs">
+          <FILE id="tqSrzX" name="Knob_01.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_01.png"/>
+          <FILE id="YORhjp" name="Knob_02.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_02.png"/>
+          <FILE id="V9vtXG" name="Knob_03.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_03.png"/>
+          <FILE id="omzODA" name="Knob_04.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_04.png"/>
+          <FILE id="HigC8A" name="Knob_05.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_05.png"/>
+          <FILE id="c5Phh7" name="Knob_06.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_06.png"/>
+          <FILE id="uyUneR" name="Knob_07.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_07.png"/>
+          <FILE id="BGdtne" name="Knob_08.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_08.png"/>
+          <FILE id="lFeobs" name="Knob_09.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_09.png"/>
+          <FILE id="KwCSw8" name="Knob_10.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_10.png"/>
+        </GROUP>
+        <GROUP id="{021B1BE1-6E53-77D4-F2AA-39B5A515F10D}" name="vu-meter">
+          <FILE id="EDdNYo" name="back_vu-meter_decore5.png" compile="0" resource="1"
+                file="Source/Assets/vu-meter/back_vu-meter_decore5.png"/>
+          <FILE id="ccGnmx" name="scale_vu-meter.png" compile="0" resource="1"
+                file="Source/Assets/vu-meter/scale_vu-meter.png"/>
+          <FILE id="OdcIbF" name="scale_vu-meterno_name.png" compile="0" resource="1"
+                file="Source/Assets/vu-meter/scale_vu-meterno_name.png"/>
+          <FILE id="S6x4Ad" name="vu_meter.png" compile="0" resource="1" file="Source/Assets/vu-meter/vu_meter.png"/>
+        </GROUP>
+        <FILE id="zfNX5H" name="back.png" compile="0" resource="1" file="Source/Assets/back.png"/>
+        <FILE id="Iiyz4T" name="back_d.png" compile="0" resource="1" file="Source/Assets/back_d.png"/>
+        <FILE id="fYmKO8" name="but_small_rec_off.png" compile="0" resource="1"
+              file="Source/Assets/but_small_rec_off.png"/>
+        <FILE id="gbXkB8" name="but_small_rec_on.png" compile="0" resource="1"
+              file="Source/Assets/but_small_rec_on.png"/>
+        <FILE id="nhIbSE" name="hor_flat_slider.png" compile="0" resource="1"
+              file="Source/Assets/hor_flat_slider.png"/>
+        <FILE id="l1A329" name="Knob_mid.png" compile="0" resource="1" file="Source/Assets/Knob_mid.png"/>
+        <FILE id="L9KuG8" name="Knob_small.png" compile="0" resource="1" file="Source/Assets/Knob_small.png"/>
+        <FILE id="RLkYVP" name="landon.png" compile="0" resource="1" file="Source/Assets/landon.png"/>
+        <FILE id="TeNvms" name="LED_meter.png" compile="0" resource="1" file="Source/Assets/LED_meter.png"/>
+        <FILE id="KKewEo" name="screen.png" compile="0" resource="1" file="Source/Assets/screen.png"/>
+      </GROUP>
+      <GROUP id="{37079B65-BA40-44FA-618D-B53DF34F3AF5}" name="globals">
+        <FILE id="h2A2Wx" name="Globals.cpp" compile="1" resource="0" file="Source/globals/Globals.cpp"/>
+        <FILE id="sArJxp" name="Globals.h" compile="0" resource="0" file="Source/globals/Globals.h"/>
+        <FILE id="LssOj9" name="Parameters.cpp" compile="1" resource="0" file="Source/globals/Parameters.cpp"/>
+        <FILE id="pLLINz" name="Parameters.h" compile="0" resource="0" file="Source/globals/Parameters.h"/>
+      </GROUP>
+      <FILE id="Ge3LB0" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="oQvgdi" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="cnFsPc" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="bFWV2U" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="viator-LV50A"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="viator-LV50A"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../modules/JUCE/modules"/>
+        <MODULEPATH id="viator_modules" path="../modules/viatordsp"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="viator_modules" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+</JUCERPROJECT>
