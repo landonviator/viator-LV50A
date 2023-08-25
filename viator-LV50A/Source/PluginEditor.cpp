@@ -67,6 +67,7 @@ void ViatorLV50AAudioProcessorEditor::resized()
     for (auto& knob : _passFilterKnobs)
     {
         knob->setBounds(pfnX, pfnY, pfnSize, pfnSize);
+        knob->setSliderTextBoxWidth(pfnSize);
         pfnX += pfnSize;
     }
     
@@ -83,6 +84,7 @@ void ViatorLV50AAudioProcessorEditor::resized()
         {
             int index = col * numRows + row;
             _eqFilterKnobs[index]->setBounds(eqX, eqY, eqSize, eqSize);
+            _eqFilterKnobs[index]->setSliderTextBoxWidth(eqSize);
             eqY += eqSize;
         }
         
@@ -96,6 +98,7 @@ void ViatorLV50AAudioProcessorEditor::resized()
     auto vfWidth = getWidth() * 0.06;
     auto vfHeight = getHeight() * 0.7;
     _volumeFader.setBounds(vfX, vfY, vfWidth, vfHeight);
+    _volumeFader.setSliderTextBoxWidth(vfHeight);
     
     // Save plugin size in value tree
     savePluginBounds();
@@ -141,7 +144,7 @@ void ViatorLV50AAudioProcessorEditor::setVolumeFaderProps()
 {
     auto image = juce::ImageCache::getFromMemory(BinaryData::Ver_slider_png, BinaryData::Ver_slider_pngSize);
     _volumeFader.setFaderImageAndNumFrames(image, 256);
-    _volumeFader.setName(ViatorParameters::volumeID);
+    _volumeFader.setName("Out");
     _volumeFader.addMouseListener(this, false);
     _volumeFader.setSliderStyle(juce::Slider::LinearVertical);
     addAndMakeVisible(_volumeFader);
