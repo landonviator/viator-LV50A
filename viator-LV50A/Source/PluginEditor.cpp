@@ -17,6 +17,9 @@ ViatorLV50AAudioProcessorEditor::ViatorLV50AAudioProcessorEditor (ViatorLV50AAud
     // volume fader
     setVolumeFaderProps();
     
+    // groups
+    setGroupProps();
+    
     // vu
     auto main = juce::ImageCache::getFromMemory(BinaryData::vu_meter_png, BinaryData::vu_meter_pngSize);
     auto grid = juce::ImageCache::getFromMemory(BinaryData::scale_vumeter_png, BinaryData::scale_vumeter_pngSize);
@@ -72,9 +75,9 @@ void ViatorLV50AAudioProcessorEditor::resized()
     }
     
     // eq knobs
-    const int numCols = 3;
+    const int numCols = 4;
     const int numRows = 3;
-    auto eqX = getWidth() * 0.4;
+    auto eqX = getWidth() * 0.37;
     auto eqY = getHeight() * 0.23;
     auto eqSize = getWidth() * 0.1;
     
@@ -89,11 +92,14 @@ void ViatorLV50AAudioProcessorEditor::resized()
         }
         
         eqY = getHeight() * 0.23;
-        eqX += eqSize;
+        eqX += eqSize * 1.15;
     }
+    
+    auto offset = 0.3;
+    _group.setBounds(_eqFilterKnobs[0]->getX(), _eqFilterKnobs[0]->getY() - eqSize * offset, eqSize * (numCols + 0.5), eqSize * numRows + eqSize * offset * 2.0);
 
     // volume fader
-    auto vfX = eqX + eqSize * 0.68;
+    auto vfX = getWidth() * 0.84;
     auto vfY = getHeight() * 0.2;
     auto vfWidth = getWidth() * 0.06;
     auto vfHeight = getHeight() * 0.7;
@@ -118,6 +124,7 @@ void ViatorLV50AAudioProcessorEditor::setPassFilterKnobProps()
         _passFilterKnobs[i]->setName(params[i].paramName);
         _passFilterKnobs[i]->addMouseListener(this, false);
         _passFilterKnobs[i]->setSliderStyle(juce::Slider::RotaryVerticalDrag);
+        _passFilterKnobs[i]->setDialValueType(viator_gui::CustomDialLabel::ValueType::kInt);
         addAndMakeVisible(*_passFilterKnobs[i]);
     }
 }
@@ -132,10 +139,12 @@ void ViatorLV50AAudioProcessorEditor::setEQFilterKnobProps()
         _eqFilterKnobs.add(std::make_unique<viator_gui::ImageFader>());
         _eqFilterSliderAttachments.add(std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor._treeState, params[i].paramID, *_eqFilterKnobs[i]));
         
+        auto valueType = params[i].isInt ? viator_gui::CustomDialLabel::ValueType::kFloat : viator_gui::CustomDialLabel::ValueType::kInt;
         _eqFilterKnobs[i]->setFaderImageAndNumFrames(image, 128);
         _eqFilterKnobs[i]->setName(params[i].paramName);
         _eqFilterKnobs[i]->addMouseListener(this, false);
         _eqFilterKnobs[i]->setSliderStyle(juce::Slider::RotaryVerticalDrag);
+        _eqFilterKnobs[i]->setDialValueType(valueType);
         addAndMakeVisible(*_eqFilterKnobs[i]);
     }
 }
@@ -152,6 +161,14 @@ void ViatorLV50AAudioProcessorEditor::setVolumeFaderProps()
     _volumeAttach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor._treeState, ViatorParameters::volumeID, _volumeFader);
 }
 
+void ViatorLV50AAudioProcessorEditor::setGroupProps()
+{
+    _group.setText("The EQ Sauce");
+    _group.setColour(juce::GroupComponent::ColourIds::textColourId, juce::Colours::whitesmoke.withAlpha(0.5f));
+    _group.setLookAndFeel(&_borderLAF);
+    addAndMakeVisible(_group);
+}
+
 
 void ViatorLV50AAudioProcessorEditor::savePluginBounds()
 {
@@ -159,4 +176,9 @@ void ViatorLV50AAudioProcessorEditor::savePluginBounds()
     audioProcessor.variableTree.setProperty("height", getHeight(), nullptr);
     audioProcessor._width = getWidth();
     audioProcessor._height = getHeight();
+}
+
+void ViatorLV50AAudioProcessorEditor::timerCallback()
+{
+    _vuMeter.getVUMeter().setValue(audioProcessor.getCurrentPeakSignal());
 }

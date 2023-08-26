@@ -42,6 +42,8 @@
         </GROUP>
         <FILE id="zfNX5H" name="back.png" compile="0" resource="1" file="Source/Assets/back.png"/>
         <FILE id="Iiyz4T" name="back_d.png" compile="0" resource="1" file="Source/Assets/back_d.png"/>
+        <FILE id="VRRG5q" name="bluevu_meter.png" compile="0" resource="1"
+              file="Source/Assets/vu-meter/bluevu_meter.png"/>
         <FILE id="fYmKO8" name="but_small_rec_off.png" compile="0" resource="1"
               file="Source/Assets/but_small_rec_off.png"/>
         <FILE id="gbXkB8" name="but_small_rec_on.png" compile="0" resource="1"

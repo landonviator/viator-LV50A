@@ -63,6 +63,9 @@ public:
     float _width = 0.0f;
     float _height = 0.0f;
     
+    void calculatePeakSignal(juce::AudioBuffer<float>& buffer);
+    float getCurrentPeakSignal();
+    
 private:
     
     juce::dsp::ProcessSpec _spec;
@@ -79,6 +82,9 @@ private:
     void updateParameters();
     
     const int _versionNumber = 1;
+    
+    juce::SmoothedValue<double> levelGain = -60.0;
+    float peakDB = -60.0;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ViatorLV50AAudioProcessor)
 };

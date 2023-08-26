@@ -225,6 +225,8 @@ void ViatorLV50AAudioProcessor::prepareToPlay (double sampleRate, int samplesPer
     _volumeModule.prepare(_spec);
     _volumeModule.setRampDurationSeconds(0.02);
     
+    levelGain.reset(sampleRate, 0.5);
+    
     updateParameters();
 }
 
@@ -277,6 +279,30 @@ void ViatorLV50AAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
     }
     
     _volumeModule.process(juce::dsp::ProcessContextReplacing<float>(block));
+    
+    // get meter value
+    calculatePeakSignal(buffer);
+}
+
+void ViatorLV50AAudioProcessor::calculatePeakSignal(juce::AudioBuffer<float> &buffer)
+{
+    levelGain.skip(buffer.getNumSamples());
+    peakDB = buffer.getMagnitude(0, 0, buffer.getNumSamples());
+    
+    if (peakDB < levelGain.getCurrentValue())
+    {
+        levelGain.setTargetValue(peakDB);
+    }
+
+    else
+    {
+        levelGain.setCurrentAndTargetValue(peakDB);
+    }
+}
+
+float ViatorLV50AAudioProcessor::getCurrentPeakSignal()
+{
+    return juce::Decibels::gainToDecibels(levelGain.getNextValue());
 }
 
 //==============================================================================
@@ -294,6 +320,7 @@ juce::AudioProcessorEditor* ViatorLV50AAudioProcessor::createEditor()
 //==============================================================================
 void ViatorLV50AAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
+    _treeState.state.appendChild(variableTree, nullptr);
     juce::MemoryOutputStream stream(destData, false);
     _treeState.state.writeToStream (stream);
 }
@@ -301,9 +328,13 @@ void ViatorLV50AAudioProcessor::getStateInformation (juce::MemoryBlock& destData
 void ViatorLV50AAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     auto tree = juce::ValueTree::readFromData (data, size_t(sizeInBytes));
+    variableTree = tree.getChildWithName("Variables");
+    
     if (tree.isValid())
     {
         _treeState.state = tree;
+        _width = variableTree.getProperty("width");
+        _height = variableTree.getProperty("height");
     }
 }
 

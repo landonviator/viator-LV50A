@@ -6,6 +6,7 @@
 #include "globals/Parameters.h"
 
 class ViatorLV50AAudioProcessorEditor  : public juce::AudioProcessorEditor
+, private juce::Timer
 {
 public:
     ViatorLV50AAudioProcessorEditor (ViatorLV50AAudioProcessor&);
@@ -39,6 +40,13 @@ private:
     viator_gui::ImageFader _volumeFader;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> _volumeAttach;
     void setVolumeFaderProps();
+    
+    // timer
+    void timerCallback() override;
+    
+    juce::GroupComponent _group;
+    viator_gui::CustomBorder _borderLAF;
+    void setGroupProps();
     
     // Save plugin size in value tree
     void savePluginBounds();

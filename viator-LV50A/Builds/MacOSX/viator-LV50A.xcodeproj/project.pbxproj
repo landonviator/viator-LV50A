@@ -176,6 +176,7 @@
 		D9F742FD38B83C72B00B185C /* Knob_mid.png */ /* Knob_mid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Knob_mid.png; path = ../../Source/Assets/Knob_mid.png; sourceTree = SOURCE_ROOT; };
 		D9F8BF205EABD644A15EC265 /* PluginEditor.cpp */ /* PluginEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginEditor.cpp; path = ../../Source/PluginEditor.cpp; sourceTree = SOURCE_ROOT; };
 		DEDBD5C00046867F51AC5F35 /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = ../../../modules/JUCE/modules/juce_gui_extra; sourceTree = SOURCE_ROOT; };
+		E16A289DD09CF85279E10CB3 /* bluevu_meter.png */ /* bluevu_meter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluevu_meter.png; path = "../../Source/Assets/vu-meter/bluevu_meter.png"; sourceTree = SOURCE_ROOT; };
 		E2C98262DCC1B79238FA2DFB /* scale_vu-meter.png */ /* scale_vu-meter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "scale_vu-meter.png"; path = "../../Source/Assets/vu-meter/scale_vu-meter.png"; sourceTree = SOURCE_ROOT; };
 		E364BC00F0FCE97A7D5E600E /* AudioUnit.framework */ /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		E3B24066AE27FB86D18E7510 /* Info-VST3.plist */ /* Info-VST3.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-VST3.plist"; path = "Info-VST3.plist"; sourceTree = SOURCE_ROOT; };
@@ -354,6 +355,7 @@
 				FC77DAFB53AA92EF5B880D2C,
 				46B1928789AF5825EF92DA99,
 				7C2AD8639B95BFBA4967E21E,
+				E16A289DD09CF85279E10CB3,
 				0244FE41684CFC8389C6D99A,
 				A29183A1828B35FC3318A8BC,
 				F6FBF46AE923232DDCE476D5,
