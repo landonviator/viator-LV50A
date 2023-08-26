@@ -5,6 +5,8 @@
 ViatorLV50AAudioProcessorEditor::ViatorLV50AAudioProcessorEditor (ViatorLV50AAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
+    startTimerHz(20);
+    
     // header
     addAndMakeVisible(_headerComp);
     
@@ -34,6 +36,7 @@ ViatorLV50AAudioProcessorEditor::ViatorLV50AAudioProcessorEditor (ViatorLV50AAud
 
 ViatorLV50AAudioProcessorEditor::~ViatorLV50AAudioProcessorEditor()
 {
+    stopTimer();
 }
 
 //==============================================================================
